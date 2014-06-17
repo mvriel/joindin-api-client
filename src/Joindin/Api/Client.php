@@ -22,5 +22,7 @@ class Client extends GuzzleClient
             $this->setDefaultOption('headers/Authorization', 'OAuth ' . $configuration->get('access_token'));
         }
         $this->setDefaultOption('headers/Accept-Charset', 'utf-8');
+        $this->setDefaultOption('headers/Accept', 'application/json');
+        $this->setDefaultOption('headers/Content-Type', 'application/json');
     }
 }

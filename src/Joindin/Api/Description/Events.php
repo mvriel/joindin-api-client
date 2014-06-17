@@ -20,12 +20,6 @@ final class Events extends Description
                 'parameters'    => array(
                     'id'      => array('type' => 'string', 'location' => 'uri', 'required' => true),
                     'verbose' => array('type' => 'string', 'location' => 'query', 'default' => 'no'),
-                    'accept'  => array(
-                        'type'     => 'string',
-                        'location' => 'header',
-                        'required' => true,
-                        'default'  => 'application/json'
-                    )
                 )
             )
         ),
