@@ -13,6 +13,22 @@ final class Events extends Description
      */
     private $definition = array(
         'operations' => array(
+            'list' => array(
+                'httpMethod'    => 'GET',
+                'uri'           => 'v2.1/events',
+                'responseModel' => 'object',
+                'parameters'    => array(
+                    'verbose' => array('type' => 'string', 'location' => 'query', 'default' => 'yes'),
+                    'filter'  => array(
+                        'type'     => 'string',
+                        'location' => 'query',
+                        'required' => false,
+                        'enum'     => array('hot', 'upcoming', 'past', 'cfps')
+                    ),
+                    'title'   => array('type' => 'string', 'location' => 'query', 'required' => false),
+                    'stub'    => array('type' => 'string', 'location' => 'query', 'required' => false),
+                )
+            ),
             'fetch' => array(
                 'httpMethod'    => 'GET',
                 'uri'           => 'v2.1/events/{id}',
