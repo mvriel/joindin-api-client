@@ -19,12 +19,15 @@ final class Events extends Description
                 'responseModel' => 'object',
                 'parameters'    => array(
                     'id'      => array('type' => 'string', 'location' => 'uri', 'required' => true),
-                    'verbose' => array('type' => 'string', 'location' => 'query', 'default' => 'no'),
+                    'verbose' => array('type' => 'string', 'location' => 'query', 'default' => 'yes'),
                 )
-            )
+            ),
         ),
         'models' => array(
-            'object' => array('type' => 'object', 'additionalProperties' => array('location' => 'json'))
+            'object' => array(
+                'type' => 'object',
+                'additionalProperties' => array('location' => 'json', 'mapper' => 'Joindin\Api\Mapper\Event[]')
+            )
         )
     );
 
