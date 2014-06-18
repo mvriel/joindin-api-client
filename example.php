@@ -19,7 +19,7 @@ $eventService = $client->getService(new \Joindin\Api\Description\Events());
 /** @var \Joindin\Api\Response $result Find a complete event listing (max 20) */
 $result = $eventService->list();
 
-/** @var \Joindin\Api\Entity\Event $event Get event entity*/
+/** @var \Joindin\Api\Entity\Event $event Get event entity */
 $event = current($result->getResource());
 
 var_export($event);
