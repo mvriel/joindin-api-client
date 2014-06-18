@@ -10,4 +10,4 @@ $client = new \Joindin\Api\Client(
 );
 
 $eventService = $client->getService(new \Joindin\Api\Description\Events());
-var_export($eventService->list(array('id' => '1')));
+var_export($eventService->fetch(array('id' => '1')));
