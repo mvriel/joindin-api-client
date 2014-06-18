@@ -9,6 +9,5 @@ $client = new \Joindin\Api\Client(
     )
 );
 
-$client = new \GuzzleHttp\Command\Guzzle\GuzzleClient($client, new \Joindin\Api\Description\Events());
-
-var_export($client->fetch(array('id' => '1')));
+$eventService = $client->getService(new \Joindin\Api\Description\Events());
+var_export($eventService->list(array('id' => '1')));
