@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f95b0d20f3f8efe8a2ee35d20f4e354d",
+    "hash": "4d9e628c1e9005ce283dfe12674679b9",
     "packages": [
         {
             "name": "guzzlehttp/command",
@@ -205,6 +205,55 @@
                 "stream"
             ],
             "time": "2014-04-03 04:48:24"
+        },
+        {
+            "name": "symfony/serializer",
+            "version": "v2.5.0",
+            "target-dir": "Symfony/Component/Serializer",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Serializer.git",
+                "reference": "d9205216ce3265326476b26b36172f2b29220e5f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Serializer/zipball/d9205216ce3265326476b26b36172f2b29220e5f",
+                "reference": "d9205216ce3265326476b26b36172f2b29220e5f",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Serializer\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Serializer Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-04-18 20:40:52"
         }
     ],
     "packages-dev": [
