@@ -49,18 +49,21 @@ class Client extends GuzzleClient
     {
         /** @var \GuzzleHttp\Command\Model $result */
         $result = $event->getResult();
-        $resource = current($result->toArray());
 
         $isCollection = false;
         $mapper = $this->findMapper($event, $isCollection);
+        if (! $mapper || ! $result->toArray()) {
+            $event->setResult($result->toArray());
+            return;
+        }
 
-        if ($mapper) {
-            if (! $isCollection) {
-                $resource = $mapper->map($resource);
-            } else {
-                foreach ($resource as $key => $resourceItem) {
-                    $resource[$key] = $mapper->map($resourceItem);
-                }
+        $resource = current($result->toArray());
+
+        if (! $isCollection) {
+            $resource = $mapper->map($resource);
+        } else {
+            foreach ($resource as $key => $resourceItem) {
+                $resource[$key] = $mapper->map($resourceItem);
             }
         }
 
@@ -79,6 +82,9 @@ class Client extends GuzzleClient
     {
         /** @var Command $command */
         $command = $event->getCommand();
+        if (! $command->getOperation()->getResponseModel()) {
+            return null;
+        }
         $model = $command->getOperation()->getServiceDescription()->getModel(
             $command->getOperation()->getResponseModel()
         );

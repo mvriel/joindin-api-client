@@ -10,4 +10,29 @@ $client = new \Joindin\Api\Client(
 );
 
 $eventService = $client->getService(new \Joindin\Api\Description\Events());
-var_export($eventService->fetch(array('id' => '1')));
+
+/** @var \Joindin\Api\Response $result Find a complete event listing (max 20) */
+$result = $eventService->list();
+
+/** @var \Joindin\Api\Entity\Event $event Get event entity*/
+$event = current($result->getResource());
+
+/** @var \Joindin\Api\Response $result Find a specific event at the given url */
+$event = $eventService->fetch(array('url' => $event->getUri()));
+
+/** @var string[] $result Submit a new event and receive an array with the url of the new event */
+$result = $eventService->submit(
+    array(
+        'name'         => 'My Event',
+        'description'  => 'My Event Description',
+        'start_date'   => '2014-06-01',
+        'end_date'     => '2014-07-31',
+        'tz_continent' => 'Europe',
+        'tz_place'     => 'Amsterdam',
+    )
+);
+
+/** @var \Joindin\Api\Response $result Retrieve the new event by the returned URL */
+$result = $eventService->fetch(array('url' => $result['url']));
+
+var_export($result);
