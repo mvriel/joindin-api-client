@@ -8,6 +8,8 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class Talk implements MapperInterface
 {
+    const ENTITY_CLASS = 'Joindin\Api\Entity\Talk';
+
     private $camelizedAttributes = array(
         'talk_title',
         'url_friendly_talk_title',
@@ -38,6 +40,6 @@ class Talk implements MapperInterface
 
     public function map(array $data)
     {
-        return $this->normalizer->denormalize($data, 'Joindin\Api\Entity\Talk');
+        return $this->normalizer->denormalize($data, self::ENTITY_CLASS);
     }
 } 

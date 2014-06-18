@@ -8,6 +8,8 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class Event implements MapperInterface
 {
+    const ENTITY_CLASS = 'Joindin\Api\Entity\Event';
+
     private $camelizedAttributes = array(
         'url_friendly_name',
         'start_date',
@@ -39,6 +41,6 @@ class Event implements MapperInterface
 
     public function map(array $data)
     {
-        return $this->normalizer->denormalize($data, 'Joindin\Api\Entity\Event');
+        return $this->normalizer->denormalize($data, self::ENTITY_CLASS);
     }
 } 
