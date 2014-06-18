@@ -13,7 +13,7 @@ use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class Client extends GuzzleClient
 {
-    const DEFAULT_BASE_URL = 'http://api.joind.in/v2.1';
+    const DEFAULT_BASE_URL = 'https://api.joind.in/v2.1';
 
     public function __construct($config = array())
     {
