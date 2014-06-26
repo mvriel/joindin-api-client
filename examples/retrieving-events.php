@@ -19,7 +19,7 @@ $eventService = $client->getService(new \Joindin\Api\Description\Events());
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $eventService->list();
+$response = $eventService->getCollection();
 
 /**
  * 2. Get the first event from the response

@@ -18,7 +18,7 @@ $talkService  = $client->getService(new \Joindin\Api\Description\Talks());
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $eventService->list();
+$response = $eventService->getCollection();
 
 /**
  * 2. Get an event (the first in this case)
@@ -39,7 +39,7 @@ $talksUri = $event->getTalksUri();
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $talkService->fetch(array('url' => $talksUri));
+$response = $talkService->getCollection(array('url' => $talksUri));
 
 /**
  * 5. Get an array with all talk entities

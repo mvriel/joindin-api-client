@@ -19,7 +19,7 @@ $commentService = $client->getService(new \Joindin\Api\Description\Talk\Comments
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $eventService->list();
+$response = $eventService->getCollection();
 
 /**
  * 2. Get an event (the first in this case)
@@ -54,7 +54,7 @@ $talk = current($response->getResource());
  *
  * @var \Joindin\Api\Response
  */
-$response = $commentService->list(array('url' => $talk->getCommentsUri()));
+$response = $commentService->getCollection(array('url' => $talk->getCommentsUri()));
 
 /**
  * 7. Get array with comment entities.

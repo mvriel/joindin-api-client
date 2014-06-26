@@ -19,7 +19,7 @@ $commentService = $client->getService(new \Joindin\Api\Description\Talk\Comments
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $eventService->list();
+$response = $eventService->getCollection();
 
 /**
  * 2. Get an event (the first in this case)

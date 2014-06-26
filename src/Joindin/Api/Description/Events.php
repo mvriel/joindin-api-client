@@ -13,7 +13,7 @@ final class Events extends Description
      */
     private $definition = array(
         'operations' => array(
-            'list' => array(
+            'getCollection' => array(
                 'httpMethod'    => 'GET',
                 'uri'           => 'v2.1/events',
                 'responseModel' => 'object',

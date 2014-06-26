@@ -19,7 +19,7 @@ $userService = $client->getService(new \Joindin\Api\Description\Users());
  *
  * @var \Joindin\Api\Response $response
  */
-$response = $userService->list();
+$response = $userService->getCollection();
 
 /**
  * 2. Get the first user from the response

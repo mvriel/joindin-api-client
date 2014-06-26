@@ -13,7 +13,7 @@ final class Talks extends Description
      */
     private $definition = array(
         'operations' => array(
-            'list' => array(
+            'getCollection' => array(
                 'httpMethod'    => 'GET',
                 'uri'           => '{+url}',
                 'responseModel' => 'object',

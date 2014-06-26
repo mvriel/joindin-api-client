@@ -13,7 +13,7 @@ final class Users extends Description
      */
     private $definition = array(
         'operations' => array(
-            'list' => array(
+            'getCollection' => array(
                 'httpMethod'    => 'GET',
                 'uri'           => 'v2.1/users',
                 'responseModel' => 'object',

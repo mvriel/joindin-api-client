@@ -17,7 +17,7 @@ $client = new \Joindin\Api\Client(
 $eventService = $client->getService(new \Joindin\Api\Description\Events());
 
 /** @var \Joindin\Api\Response $result Find a complete event listing (max 20) */
-$result = $eventService->list();
+$result = $eventService->getCollection();
 
 /** @var \Joindin\Api\Entity\Event $event Get event entity */
 $event = current($result->getResource());
